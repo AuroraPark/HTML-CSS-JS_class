@@ -1,0 +1,170 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* td{
+            background-color: aqua;
+        }
+
+        td:hover {
+            background-color: yellow;
+        } */
+        h2 {
+            color: blue;
+            background-color: yellowgreen;
+        }
+        h3 {
+            color: red !important; 
+            background-color: yellowgreen;
+        }
+        /* id */
+        #second {
+            color:salmon;
+        }
+        /* h1중에 class를 grp1을 가진것 */
+        h1,.grp1{
+            color:seagreen;
+        }
+
+
+
+        p{
+            /* top, bottom, right, left 동일 */
+            padding: 100px;
+            
+        }
+
+       /* unvisited link */
+            a:link {
+            color: red;
+            }
+
+            /* visited link */
+            a:visited {
+            color: green;
+            }
+
+            /* mouse over link */
+            a:hover {
+            color: hotpink;
+            }
+
+            /* selected link */
+            a:active {
+            color: blue;
+            }
+
+
+
+
+
+    </style>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="cssEx.css">
+</head>
+<body>
+    <!-- h${heading-$}*6 -->
+    <h1>heading-1</h1>
+    <h1 class="grp1">heading-1</h1>
+    <h1>heading-1</h1>
+    <h1 class="grp1">heading-1</h1>
+    <h2>heading-2</h2>
+    <h3 style="color:white; background-color: black;">heading-3</h3>
+    <h4 >heading-4 - first</h4>
+    <h4 id="second">heading-4 - second</h4>
+    <h5>heading-5</h5>
+    <h6>heading-6</h6>
+
+    <!-- pre 태그  -->
+    <pre>
+        int i = 0;
+
+        for(i = 0; id <= length; i++){
+            System.out.println();
+        }
+    </pre>
+
+    <!-- 테이블 -->
+    <!-- 5 x 5 빙고판을 만들어보세요-->
+    <table>
+        <tr>
+            <td rowspan="3">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>2</td>
+            <td colspan="2" style="text-align:center;">3</td>
+            <!-- <td>4</td> -->
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+
+
+    </table>  
+    
+        <!-- select -->
+        <!-- select>option[value=java]{java}*5 -->
+        <select name="job">
+                <option value="">직업선택</option>
+                <option value="학생">학생</option>
+                <option value="회사원">회사원</option>
+                <option value="기타">기타</option>
+            </select>
+
+        <form action="">
+            <input type="text" placeholder="이름을 입력해주세요.">
+            <input type="submit" value="로그인기능있음">
+            <button>login기능없음</button>
+            <button onclick="alert('띵동')">띵동이다</button>
+            
+        </form>
+
+
+
+        <!-- padding -->
+        <p>아무도 그에게 수심(水深)을 일러 준 일이 없기에
+                흰 나비는 도모지 바다가 무섭지 않다.
+                 
+                청(靑)무우밭인가 해서 내려갔다가는
+                어린 날개가 물결에 절어서
+                공주(公主)처럼 지쳐서 돌아온다.
+                 
+                삼월(三月)달 바다가 꽃이 피지 않아서 서글픈
+                나비 허리에 새파란 초생달이 시리다.
+
+        </p>
+        <i class="glyphicon glyphicon-home"></i>
+<i class="glyphicon glyphicon-search"></i>
+<i class="glyphicon glyphicon-cloud"></i>
+<i class="glyphicon glyphicon-trash"></i>
+
+<a href="http://google.com">thisisGoogle</a>
+
+
+
+
+
+
+
+
+</body>
+</html>

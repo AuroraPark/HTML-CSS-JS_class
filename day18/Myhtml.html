@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>파!!!티</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        img {
+            margin-bottom: -8px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="w3-content w3-black" style="max-width:1500px;">
+    <!-- Header with Slideshow -->
+    <header class="w3-display-container w3-center">
+        <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium"
+            onclick="document.getElementById('contact').style.display='block'">Contact <i
+                class="fas fa-phone"></i></button>
+        <div class="mySlides w3-animate-opacity">
+            <img class="w3-image"
+                src="https://www.bamdokkaebi.org/storage/app/public/thumbnails/e9/5b/spill_800x800_152fc711cdff2523c1d4e1a5293c017ddd1a337c.jpg"
+                alt="Image 1" style="min-width:500px" width="1500" height="1000">
+            <div class="w3-display-middle w3-padding w3-hide-small" style="width:35%;">
+                <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+                    <h1 class="w3-xlarge">PICNIC</h1>
+                    <hr class="w3-opacity">
+                    <p>AT THE</p>
+                    <h1 class="w3-xlarge">HAN RIVER</h1>
+                    <p>April 20 Sat</p>
+                    <p><button class="w3-button w3-block w3-green w3-round" 
+                        onclick="window.open('https://open.kakao.com/o/gHyywYib')">참여하기<i
+                                class="fas fa-phone"></i></button></p>
+                </div>
+            </div>
+        </div>
+        <div class="mySlides w3-animate-opacity">
+                <img class="w3-image" src="https://www.bamdokkaebi.org/storage/app/public/thumbnails/45/86/spill_800x800_36b50f2b446d83230bfdefe244818042006d8b24.jpg" alt="Image 2" style="min-width:500px" width="1500" height="1000">
+        </div>
+        <div class="mySlides w3-animate-opacity">
+                <img class="w3-image" src="https://www.bamdokkaebi.org/storage/app/public/thumbnails/9b/d5/spill_800x800_8538e6c841b513d21354d41c965dd20e0a35b708.jpg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
+        </div>
+              <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">구경하기<i class="fa fa-angle-right"></i></a>
+              <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">구경하기 <i class="fa fa-angle-right"></i></a>
+        
+    </header>
+
+    <!-- The App Section -->
+    <div class="w3-padding-64 w3-white">
+        <div class="w3-row-padding">
+            <div class="w3-col l8 m6">
+                <h1 class="w3-jumbo"><b>장소.</b></h1>
+                <h1 class="w3-xxxlarge w3-text-green"><b>한강 여의도공원</b></h1>
+                <h1 class="w3-jumbo"><b>날짜.</b></h1>
+                <h1 class="w3-xxxlarge w3-text-green"><b>2019.04.20(Sat)</b></h1>
+                <p><span class="w3-xlarge">Seoul Bamdokkaebi Night Market</span><br> 벚꽃 내음 가득한 '2019 HAN RIVER mini
+                    PICNIC'에 당신을 초대합니다.</p>
+            </div>
+            <div class="w3-col l4 m6">
+                <a href="https://www.bamdokkaebi.org/">
+                <img src="https://www.bamdokkaebi.org/plugins/bamdokkebi/theme/assets/img/sub_nmi_mi/sub_mi_character_image.png"
+                    class="w3-image w3-right w3-hide-small" width="335" height="471"
+                    style="padding:50px; background-image:url('https://s-i.huffpost.com/gen/5409654/images/n-SEOUL-RIVER-NIGHT-VIEW-628x314.jpg'); background-repeat: no-repeat;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="w3-container w3-padding-64 w3-dark-yellow w3-center">
+        <h1 class="w3-jumbo"><b>Fun</b></h1>
+        <p> to-do </p>
+
+        <div class="w3-row" style="margin-top:64px">
+            <div class="w3-col s3">
+                <i class="fas w3-text-yellow fa-drumstick-bite w3-jumbo"></i></i>
+                <p>Food</p>
+            </div>
+            <div class="w3-col s3">
+                <i class="fa fa-heart w3-text-red w3-jumbo"></i>
+                <p>Relation</p>
+            </div>
+            <div class="w3-col s3">
+                <i class="fa fa-camera w3-text-blue w3-jumbo"></i>
+                <p>Photo</p>
+            </div>
+            <div class="w3-col s3">
+                <i class="fa fa-battery-full w3-text-green w3-jumbo"></i>
+                <p>Power</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
+        <div class="w3-section">
+            <a href="https://open.kakao.com/o/gHyywYib"><img class="w3-hover-opacity" src="kakaolink_btn_small_ov.png" style="height: 25px;  vertical-align: top;"></a>
+        </div>
+        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+                class="w3-hover-text-green">w3.css</a></p>
+        <p class="w3-medium">Powered by <a href="https://mingnol2.tistory.com/" target="_blank"
+                class="w3-hover-text-green">minnol2.tistory</a></p>
+
+    </footer>
+
+    <script>
+        // Slideshow
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

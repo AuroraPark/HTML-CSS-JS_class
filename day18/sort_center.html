@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .center div {
+        margin:auto;
+        width:50%;
+        border: 3px solid green;
+        padding: 10px;
+    }
+    .center h1{
+        padding: 70px 0;
+        border: 3px solid green;
+        text-align: center; 
+    }
+    img {
+        display: block;
+        margin: auto;
+        width: 40%;
+    }
+    /* .center {
+        line-height: 200px;
+        height: 200px;
+        border:3px solid green;
+        text-align: center;
+    } */
+
+    .center p {
+        line-height: 1.5;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    
+    </style>
+</head>
+<body>
+    
+    <div class="center">element1</div>
+    <h1 class="center">element2</h1>
+    <img src="data:image/jpeg;base64,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" alt="">
+    <p class="cneter">포유류의 일종. 식육목 고양잇과에 속하는 대표적인 동물이다. 크게는 가축화한 집고양이와 야생고양이로 나뉜다. 대개 개보다는 작은 몸집에[5] 뾰족한 귀와 날카로운 송곳니를 가지고 있는 육식성 동물이다.[6] 다른 주요 가축에 비해 육식동물의 야생성이 잘 남아있어 쥐 등의 해로운 소동물을 사냥해 인간에게 도움이 될 뿐만 아니라 귀엽고 매혹적인 외모로 애완용으로 인기가 많아 개와 함께 애완동물계의 양대산맥이라 할 수 있다. 아주 먼 과거부터 인간과 함께하고 있는 동물로 야생고양이 조차 인간들의 거처 주변을 맴돈다. 애완동물로 함께 길러지는 개와 비교할 때 가장 두드러지는 특성은 집단생활에 적응해 복종의 본능이 강한 개와는 달리 주인과 고양이가 보다 동등한 가족의 일원의 개념이며, 보통 수평적인 관계를 선호한다. 별다른 교육 없이도 자신의 주인을 어미 고양이 급으로 인식하거나, 아무리 낮더라도 같은 무리의 소속원급으로 취급한다. 이는 고양이의 사회에서도 같으며, 고양이의 가족 구성원들은 서로 상부상조하는 관계이다. 상하 관계가 뚜렷하게 보이는 개와 정반대되는 개념이다. 하지만 고양이 간에도 서열 사회는 존재한다. 터를 잡고 사는 습성이 있으므로 자기 영역에 다른 고양이가 들어왔을 경우 영역 싸움이 잦다.
+            현존하는 모든 고양이과 동물들은 대략 1,500만년 전에 하나의 조상으로부터 갈라져나온 것으로 추측되며, 그 중 고양이의 조상으로 여겨지는 것은 사막고양이(Felis Silvestris Lybica)라는 동물이다. 중동에 살던 인류가 약 만년 전에 사막고양이를 가축화하여 인간과 함께 살기 시작한 것으로 생각된다. 현대의 사막고양이는 살쾡이 종류 치고는 체구가 작은 편이지만 꼬리를 제외한 몸길이가 대략 45~75센티미터 정도, 체중은 약 3~6.5킬로그램 정도다. 만약 오늘날 집고양이의 조상이었던 사막고양이도 덩치가 이랬다면, 고양이는 인간에게 길들여지는 과정에서 몸이 상당히 작아진 셈이다. 고대 이집트인들은 고양이를 신격화할 정도로 좋아했는데, 이는 고양이가 독사를 사냥할 수 있었기 때문이라 한다. </p>
+
+</body>
+</html>
