@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이벤트 처리</title>
+</head>
+
+
+<body>
+    <!-- // 3. 바로 넣어주기 -->
+    <h1 id="header" onclick="alert(this);">Click me3!!</h1>
+    
+    <h1 id="header">Click me!!</h1>
+    <script>
+        window.onload = function () {
+            var header = document.getElementById('header');
+
+            // 1. 이벤트 이름을 만든다음
+            header.onclick = click;
+
+            // 2. 한번에 함수를 직접 넣어주기
+            header.onclick = function () { alert("Hello"); }
+            // header.onclick = null; // 연결된 이벤트 처리 함수를 제거
+        }
+        // 1. 기능주기
+        function click() { alert("Hello"); }
+    </script>
+</body>
+
+</html>

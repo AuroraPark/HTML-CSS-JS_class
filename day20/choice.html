@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Choice1-Excercise</title>
+</head>
+
+<body>
+    <!-- 클릭하면 textArea에 보여지게 만들자! -->
+    <!-- 한번더 클릭하면 textArea에서 사라지게 만들자! -->
+    <!-- 순서 -->
+    <!-- 1.화면구성 -->
+    <!-- 2.참조얻기-->
+    <!-- 3. 이벤트 처리 -->
+    <!-- 4. test -->
+    <!-- 개발자도구 var tmp = document.getElementsByIdName("<input>"); -->
+
+    <span>
+        <input type="checkbox" name="all" id="all">전체선택 <br>
+        <input type="checkbox" name="basketball" id="basketball">농구<br>
+        <input type="checkbox" name="baseball" id="baseball">야구<br>
+        <input type="checkbox" name="score" id="score">축구<br>
+        <input type="checkbox" name="haki" id="haki">하키<br>
+    </span>
+    <!-- textarea에 어떻게 값을 넣지? -->
+    <textarea name="textArea" id="textArea" cols="30" rows="10" placeholder="값선택하세요!"></textarea>
+
+
+
+
+
+    <script>
+        window.onload = function () { // 로딩을 끝마쳤을때
+            // 농구를 선택했을 때
+            var baskChecked = document.getElementById('basketball');
+            baskChecked.onclick = baskClick;
+
+            // 야구를 선택했을 때
+            var baseChecked = document.getElementById('baseball');
+            baseChecked.onclick = baseClick;
+            // 축구를 선택했을 때
+            var scoreChecked = document.getElementById('score');
+            scoreChecked.onclick = scoreClick;
+            // 하키를 선택했을 때
+            var hakiChecked = document.getElementById('haki');
+            hakiChecked.onclick = hakiClick;
+            // 전체(all)를 선택했을 때
+            var allchecked = document.getElementById('all');
+            allchecked.onclick = allClick;
+            // textContent에 글쓰기
+            // var textContent = document.set
+
+
+
+
+        }
+
+        // 농구 선택
+
+        function baskClick() {
+            var input = document.getElementById('textArea');
+            if (basketball.checked == true) {
+                input.textContent += "농구";
+            } else {
+                // 값을 찾아서 바꿔준다.
+                // "".replace() = "농구";
+                
+                var str = (input.textContent).replace("농구","");
+                document.getElementById('textArea').innerHTML = str;
+            }
+
+
+        }
+        // 야구 선택
+        function baseClick() {
+            var input = document.getElementById('textArea');
+            if (baseball.checked == true) {
+                input.textContent += "야구";
+            } else {
+                var str = (input.textContent).replace("야구","");
+                document.getElementById('textArea').innerHTML = str;
+            }
+        }
+        // 축구 선택
+        function scoreClick() {
+            var input = document.getElementById('textArea');
+            if (score.checked == true) {
+                input.textContent += "축구";
+            } else {
+                var str = (input.textContent).replace("축구","");
+                document.getElementById('textArea').innerHTML = str;
+            }
+        }
+        // 하키 선택
+        function hakiClick() {
+            var input = document.getElementById('textArea');
+            if (haki.checked == true) {
+                input.textContent += "하키";
+            } else {
+                // '-'하면 안된다
+                // input.textContent -= "하키";
+                var str = (input.textContent).replace("하키","");
+                document.getElementById('textArea').innerHTML = str;
+            }
+        }
+        // 전체 선택이 되면
+        // 다른것들을 다 선택한다
+        function allClick() {
+            if (all.checked == true) {
+                haki.checked = true;
+                score.checked = true;
+                baseball.checked = true;
+                basketball.checked = true;
+            }else{
+                haki.checked = false;
+                score.checked = false;
+                baseball.checked = false;
+                basketball.checked = false;
+            }
+            baskClick();
+            baseClick();
+            scoreClick(); 
+            hakiClick();
+
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
