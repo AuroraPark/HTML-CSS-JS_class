@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>checkboxEx</title>
+</head>
+
+<body>
+    <!-- 1. 화면구성 -->
+    <input type="checkbox" name="" id="" value="전체">전체
+    <input type="checkbox" name="" id="" value="야구">야구
+    <input type="checkbox" name="" id="" value="농구">농구
+    <input type="checkbox" name="" id="" value="축구">축구
+    <input type="checkbox" name="" id="" value="배구">배구
+    <textarea name="" id="ta" cols="37" rows="10" style="display:block"></textarea>
+
+    <script>
+        // 1. onload함수
+        window.onload = function () {
+            // 2. dom에서 가지고오기
+            // 2-1. input Tag를 가진 요소들
+            var chkArr = document.getElementsByTagName("input");
+
+            var input = document.getElementById("ta");
+            // // 3. 이벤트 주기
+            // chkArr[0].onclick = function () {
+            //     alert(chkArr[0].value);
+            // }
+
+            // 모든 요소에 이벤트 주기('전체'는 제외)
+            for (i = 0; i < chkArr.length; i++) {
+                // 클로저로 만들어보기
+                (function (x) {
+                    chkArr[x].onclick = function () {
+                        // 전체를 선택하면 전부다 선택되게 한다.
+                        if (this == chkArr[0]) {
+                            for (j = 0; j < chkArr.length; j++) {
+                                chkArr[j].checked = this.checked;
+                            }
+
+                        } else {
+                            chkArr[0].checked == false;
+                        }
+                        // textarea에 value 값 띄우기
+                        ta.innerHTML = "";
+                        for (j = 1; j < chkArr.length; j++) {
+                            if (chkArr[j].checked)
+                                ta.innerHTML += chkArr[j].value;
+                        }
+                    }
+                })(i);
+            }
+        }
+    </script>
+</body>
+
+</html>
