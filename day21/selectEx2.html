@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>selectEx2</title>
+</head>
+
+<body style="text-align:center">
+    <!-- 1. 화면구성 -->
+    <!-- option 4개 가지는 select1 -->
+    <select name="" id="leftside" style="width:100px; height:100px;" multiple>
+        <option class="sel1" value="야구">야구</option>
+        <option class="sel1" value="축구">축구</option>
+        <option class="sel1" value="농구">농구</option>
+        <option class="sel1" value="배구">배구</option>
+    </select>
+
+    <!-- option 0개 가지는 select2 -->
+    <select name="" id="rightside" style="width:100px; height:100px;" multiple>
+
+    </select>
+
+    <!-- 버튼 4개 -->
+    <div>
+        <button id="Lbtn">
+            <</button> <button id="allLbtn">
+                <<</button> <button id="Rbtn">>
+        </button>
+        <button id="allRbtn">>></button>
+    </div>
+
+
+
+    <script>
+        // 옵션을 추가제거한다!
+        window.onload = function () {
+            // 2. DOM에서 가지고오기
+            // 1. 첫번째 select 창에서 불러온다.
+            var leftside = document.getElementById("leftside");
+            var rightside = document.getElementById("rightside");
+            var btn = document.getElementsByTagName("button");
+            // 3. 이벤트 주기
+            // special.add(opt,special.length+1);
+
+            // (>)를 클릭하면
+            // leftside의 선택된 요소가 rightside의 요소로 이동한다.
+            // rightside.add(leftside.options[0],rightside.length);
+            btn[2].onclick = function () {
+                // rightside.add(leftside.options[0], rightside.length);
+                // leftside.options[1].selected // 선택되면 true
+                for (i = 0; i < leftside.length; i++) {
+                    if (leftside.options[i].selected == true) {
+                        rightside.add(leftside.options[0], rightside.length);
+                    }
+                }
+
+            }
+            // (<)를 클릭하면
+            // rightside의 선택된 요소가 leftside의 요소로 이동한다.
+            btn[0].onclick = function () {
+                for (i = 0; i < rightside.length; i++) {
+                    if (rightside.options[i].selected == true) {
+                        leftside.add(rightside.options[0], leftside.length);
+                    }
+                }
+            }
+            // (>>)를 클릭하면
+            // leftside의 모든 요소가 rightside의 요소로 이동한다.
+            btn[3].onclick = function () {
+                var num = leftside.length;
+                // for (i = 0; i < num; i++) {
+                //     rightside.add(leftside.options[0], 0);
+                // }
+                for (i = num - 1, j = 0; i >= 0; i-- , j++) {
+                    rightside.add(leftside.options[i], j);
+                }
+            }
+            // (<<)를 클릭하면
+            // rightside의 모든 요소가 leftside의 요소로 이동한다.
+            btn[1].onclick = function () {
+                var num = rightside.length;
+                // for(i=0;i<num;i++){
+                //     // 어머낫..순서가 반대가 되어버리네,,!
+                //     leftside.add(rightside.options[0],0);     
+                // }
+                for (i = num - 1, j = 0; i >= 0; i-- , j++) {
+                    leftside.add(rightside.options[i], j);
+                    // console.log(rightside.options[i]);  
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
