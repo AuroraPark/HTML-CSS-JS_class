@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CardShuffle</title>
+    <style>
+        img {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body style="text-align:center">
+    <!-- 1. 화면구성 -->
+    <!-- 1. 카드 뒷면 세개 그리기 -->
+    <span>
+        <img id="first" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="second" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="third" src="img/5.PNG" alt="클릭해서 뒤집기">
+    </span>
+    <div style="text-align:center">
+        <!-- 2. 버튼 세개 그리기 -->
+        <span>
+            <button value="first">뒤집기</button>
+            <button value="second">보이기</button>
+            <button value="third">감추기</button>
+        </span>
+    </div>
+    <script>
+        // 2. dom에서 가져오기
+        // 3. 이벤트 넣기
+        window.onload = function () {
+            var cards = document.getElementsByTagName('img');
+            var btn = document.getElementsByTagName('button');
+
+
+            // 뒤집기
+            var num = 0;
+            btn[0].onclick = function () {
+                cards[num].src = "file:///D:/html/_class/day21/img/5.PNG";
+                num++;
+            }
+
+            var randomSrc = "";
+            var randomNum = [];
+            // 1차배열을 만든다음에
+            for (x = 1; x < 5; x++)
+                randomNum[x] = x;
+
+
+            // 한번에 보이기
+            btn[1].onclick = function () {
+                // 카드에 그림 주소를 넣는당
+                // cards.first.src = "file:///D:/html/_class/day21/img/2.PNG";
+                // cards.second.src = "file:///D:/html/_class/day21/img/3.PNG"; 
+                // cards.third.src = "file:///D:/html/_class/day21/img/4.PNG";
+                // var randomSrc = "file:///D:/html/_class/day21/img/"+4+".PNG";
+                // 카드를 랜덤으로 받아온다.
+
+                // 섞는다
+                randomNum.sort((a, b) => Math.random() - 0.5);
+                // for문으로 넣기!
+                for (i = 0; i < cards.length; i++) { // 카드의 길이 만큼 
+                    // 랜덤 넘버를 가지고온다.
+                    // 카드를 선택한다.
+                    randomSrc = "file:///D:/html/_class/day21/img/" + randomNum[i] + ".PNG";
+                    // 출력
+                    cards[i].src = randomSrc;
+                }
+
+                // cards[0].src = randomSrc;
+                // cards[1].src = "file:///D:/html/_class/day21/img/3.PNG";
+                // cards[2].src = "file:///D:/html/_class/day21/img/4.PNG";
+            }
+
+            // 감추기
+            btn[2].onclick = function () {
+                for (i = 0; i < cards.length; i++) {
+                    cards[i].src = "file:///D:/html/_class/day21/img/5.PNG";
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
