@@ -23,11 +23,12 @@
         <img id="third" src="img/5.PNG" alt="클릭해서 뒤집기">
     </span>
     <div style="text-align:center">
-        <!-- 2. 버튼 세개 그리기 -->
+        <!-- 2. 버튼 네개 그리기 -->
         <span>
             <button value="first">뒤집기</button>
             <button value="second">보이기</button>
             <button value="third">감추기</button>
+            <button value="four">섞기</button>
         </span>
     </div>
     <script>
@@ -43,14 +44,25 @@
             btn[0].onclick = function () {
                 cards[num].src = "file:///D:/html/_class/day21/img/5.PNG";
                 num++;
+                if (num >= 3)
+                    num = 0;
             }
-
-            var randomSrc = "";
-            var randomNum = [];
-            // 1차배열을 만든다음에
-            for (x = 1; x < 5; x++)
-                randomNum[x] = x;
-
+                var randomSrc = [];
+                var randomNum = [];
+                // 1차배열을 만든다음에
+            btn[3].onclick = function () {
+                // 화면에 보여주기
+                for (i = 0; i < cards.length; i++) {  // 카드의 길이 만큼 
+                    for (x = 1; x < 5; x++)
+                        randomNum[x] = x;
+                    // 배열에 카드를 담기
+                    // 배열을 섞기
+                    randomNum.sort((a, b) => Math.random() - 0.5);
+                    randomSrc[i] = "file:///D:/html/_class/day21/img/" + randomNum[i] + ".PNG";
+                    // 데이타랑 보여주는거랑 분리하기
+                    // 카드이름 넣어서 섞기
+                }
+            }
 
             // 한번에 보이기
             btn[1].onclick = function () {
@@ -62,14 +74,12 @@
                 // 카드를 랜덤으로 받아온다.
 
                 // 섞는다
-                randomNum.sort((a, b) => Math.random() - 0.5);
                 // for문으로 넣기!
                 for (i = 0; i < cards.length; i++) { // 카드의 길이 만큼 
                     // 랜덤 넘버를 가지고온다.
                     // 카드를 선택한다.
-                    randomSrc = "file:///D:/html/_class/day21/img/" + randomNum[i] + ".PNG";
                     // 출력
-                    cards[i].src = randomSrc;
+                    cards[i].src = randomSrc[i];
                 }
 
                 // cards[0].src = randomSrc;
