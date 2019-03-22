@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>selectEx</title>
+</head>
+
+<body style="text-align:center">
+    <!-- 1. 화면구성 -->
+    <!-- option 4개 가지는 select1 -->
+    <select name="" id="se1" style="width:100px; height:100px;" multiple>
+        <option class="sel1" value="야구">야구</option>
+        <option class="sel1" value="축구">축구</option>
+        <option class="sel1" value="농구">농구</option>
+        <option class="sel1" value="배구">배구</option>
+    </select>
+
+    <!-- option 4개 가지는 select2 -->
+    <select name="" id="se2" style="width:100px; height:100px;" multiple>
+        <option class="sel2" value="야구" style="display:none;">야구</option>
+        <option class="sel2" value="축구" style="display:none;">축구</option>
+        <option class="sel2" value="농구" style="display:none;">농구</option>
+        <option class="sel2" value="배구" style="display:none;">배구</option>
+    </select>
+
+    <!-- 버튼 4개 -->
+    <div>
+        <button id="lbtn"><</button> 
+        <button id="allLbtn"><<</button> 
+        <button id="rbtn">></button>
+        <button id="allRbtn">>></button>
+    </div>
+
+
+
+    <script>
+        window.onload = function () {
+            // 2. DOM에서 가지고오기
+            var sel1 = document.getElementsByClassName("sel1");
+            var sel2 = document.getElementsByClassName("sel2");
+
+            var btn = document.getElementsByTagName("button");
+            // 3. 이벤트 주기
+            // 왼쪽버튼
+            btn[0].onclick = function () {
+                // alert("선택된것만 왼쪽으로가여!");
+                // 1) 선택된걸어떻게알지!@#!@#!@#
+                // 가설1_ focus된 option의 value를 찾아온다.
+                // 땡 틀림
+                // selected 가 true 이면 선택된것
+                // sel1의 옵션을 block
+                // sel2의 옵션을 none
+                for (i = 0; i < sel2.length; i++) {
+                    if (sel2[i].selected == true) {
+                        sel1[i].style.display = 'block';
+                        sel2[i].style.display = 'none';
+                    }
+                }
+            }
+            // 전부 왼쪽 버튼
+            btn[1].onclick = function () {
+                // sel1 전부 보이게하기
+                for (i = 0; i < sel1.length; i++) {
+                    sel1[i].style.display = 'block';
+                }
+                // sel2 전부 안보이게하기
+                for (i = 0; i < sel2.length; i++) {
+                    sel2[i].style.display = 'none';
+                }
+            }
+            // 오른쪽 버튼
+            btn[2].onclick = function () {
+                // 옵션이 선택되었으면 해당 
+                // sel1의 옵션을 none
+                // sel2의 display -block
+                for (i = 0; i < sel1.length; i++) {
+                    if (sel1[i].selected == true) {
+                        sel1[i].style.display = 'none';
+                        sel2[i].style.display = 'block';
+                    }
+                }
+            }
+            // 전부 오른쪽 버튼
+            btn[3].onclick = function () {
+                // sel1 전부 안보이게하기
+                for (i = 0; i < sel1.length; i++) {
+                    sel1[i].style.display = 'none';
+                }
+                // sel2 전부 보이게하기
+                for (i = 0; i < sel2.length; i++) {
+                    sel2[i].style.display = 'block';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
