@@ -50,6 +50,15 @@
                             if (chkArr[j].checked)
                                 ta.innerHTML += chkArr[j].value;
                         }
+                        console.log((ta.innerHTML).length);
+                        // (ta.innerHTML).length
+
+                        // 전체 다 선택되면 '전체' 체크박스에 체크 
+                        if ((ta.innerHTML).length == 8) {
+                            chkArr[0].checked = true;
+                        } else {
+                            chkArr[0].checked = false;
+                        }
                     }
                 })(i);
             }

@@ -18,9 +18,14 @@
     <!-- 1. 화면구성 -->
     <!-- 1. 카드 뒷면 세개 그리기 -->
     <span>
-        <img id="first" src="img/5.PNG" alt="클릭해서 뒤집기">
-        <img id="second" src="img/5.PNG" alt="클릭해서 뒤집기">
-        <img id="third" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="1" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="2" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="3" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="4" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="5" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="6" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="7" src="img/5.PNG" alt="클릭해서 뒤집기">
+        <img id="8" src="img/5.PNG" alt="클릭해서 뒤집기">
     </span>
     <div style="text-align:center">
         <!-- 2. 버튼 네개 그리기 -->
@@ -52,12 +57,12 @@
                 // 1차배열을 만든다음에
             btn[3].onclick = function () {
                 // 화면에 보여주기
-                for (i = 0; i < cards.length; i++) {  // 카드의 길이 만큼 
+                for (i = 0; i < cards.length; i++) {  // 카드의 길이 만큼 f
                     for (x = 1; x < 5; x++)
                         randomNum[x] = x;
                     // 배열에 카드를 담기
                     // 배열을 섞기
-                    randomNum.sort((a, b) => Math.random() - 0.5);
+                    randomNum.sort((a, b) => Math.random() - 0.5); 
                     randomSrc[i] = "file:///D:/html/_class/day21/img/" + randomNum[i] + ".PNG";
                     // 데이타랑 보여주는거랑 분리하기
                     // 카드이름 넣어서 섞기

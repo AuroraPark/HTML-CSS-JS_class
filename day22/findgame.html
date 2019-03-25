@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FindSameCardGame</title>
+    <style>
+        img {
+            height: 160px;
+            width: 120px;
+        }
+
+        button {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 화면구성 -->
+
+    <!-- 버튼 칸 -->
+    <button id="show">보이기</button>
+    <button id="hide">숨기기</button>
+    <button id="shuffle">섞기</button>
+
+    <!-- 카드 칸 -->
+    <div id="board"></div>
+
+    <!-- 점수 칸 -->
+    <div id=count></div>
+
+    <script>
+        var cardArr = [];   // 카드를 담을 배열
+
+        window.onload = function () {   // 페이지가 로딩되었을 때
+            // 2. DOM에서 가져오기
+            var showBtn = document.getElementById("show");
+            var hideBtn = document.getElementById("hide");
+            var shuffleBtn = document.getElementById("shuffle");
+            var board = document.getElementById("board");
+
+            // 3. 이벤트 넣기
+            showBtn.onclick = showCard;
+            hideBtn.onclick = hideCard;
+            shuffleBtn.onclick = shuffleCard;   
+
+
+            init(); //  카드 배열 초기화
+        }
+
+        // 카드 배열 초기화 함수
+        function init() {
+            initCardArr(); // 카드 배열을 초기화
+            createCardTag(); // <img>를 생성    
+        }
+
+        // 카드 배열(cardArr)에 순서 부여(초기화)       
+        function initCardArr() {
+            for (i = 0; i < 26; i++)
+                if (i < 13) {
+                    // 1번부터 넣는다.
+                    cardArr[i] = (i + 1) + "";
+                    // i보다 크면
+                } else {
+                    cardArr[i] = (i + 1 - 13) + "";
+                }
+        }
+
+        // 화면(board)에 찍기
+        function createCardTag() {
+            var tmp = "";
+
+            for (i = 0; i < cardArr.length; i++) {
+                tmp += "<img src=\"img/" + cardArr[i] + ".PNG\">";
+                board.innerHTML = tmp;
+            }
+
+            // 추가 IDEA: 10초뒤에 카드가 자동으로 뒤집어짐
+
+        }
+
+        // 보이기
+        function showCard() {
+            init();
+        }
+
+        // 카드 섞기 버튼
+        function shuffleCard() {
+            // div 안에 있는 모든 img 태그들을 지칭
+            var imgTags = document.querySelectorAll('div>img');
+            var tmp = '';
+
+            
+            console.log(random);
+            for (i = 0; i < imgTags.length; i++) {
+                // 위치를 랜덤으로 돌려주기 - sort 사용해야함
+                var random = ((Math.random() * 13) - 0.5 ).toFixed(0);
+                random+="";
+                tmp += "<img src=\"img/" + random + ".PNG\">";
+                board.innerHTML = tmp;
+            }
+        }
+
+        // 숨기기 버튼
+        function hideCard() {
+            var tmp = '';
+            for (i = 0; i < cardArr.length; i++) {
+                tmp += "<img src=\"img/" + 0 + ".PNG\">";
+                board.innerHTML = tmp;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
